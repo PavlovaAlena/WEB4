@@ -1,0 +1,294 @@
+<?php
+$name = "Алена Павлова";
+
+// возраст //
+$birthdate = Date("11.05.1981");
+
+$currentdate = new DateTime("now");
+$birthdate2 = new DateTime("1981-05-11");
+$age = $birthdate2->diff($currentdate);
+
+// о себе //
+$profession = "Методолог 1С";
+$city = "Самара";
+$country = "Россия";
+$mail = "lucky@mail.ru";
+$phone = "89607331141";
+
+// навыки //
+$skills = ["Бухгалтерский и налоговый учет", "Расчет заработной платы", "1С: Бухгалтерия предприятия", "1С: Зарплата и управление персоналом", "1С: Торговля"];
+
+// Проценты шкалы //
+$percent = [100,90,80,70,60,50,40,30,20,10,0];
+
+// языки //
+$languages = ["Русский", "Английский", "Китайский"];
+
+// Опыт работы //
+$workexperience = ["work" => ["Программиcт 1С / Градиент", "Начальник отдела / СВГК", "Методолог 1С / АРГОС"], "periodwork" => ["июль 2000 - фев 2005","фев 2005 - сен 2021","сен 2021 - "], "functions" => ["Доработка конфигураций 1С под требования заказчика; Участие в проектах по внедерению ИС 1С", "Участие в проекте по переходу с 1С 7.7 на 8.2 1С: Бухгалтерия; Ведение проекта по переходу с 1С 7.7 на 8.3 1С: Зарплата; Текущая работа с задачами компании, консультирование пользователей; Взаимодействие с руководителями подразделений; Разработка инструкций для пользователей", "Ведение проекта по объединению 6 филиальных баз 1С:Бухгалтерия в единую; Разработка методик ведения учета в информационных системах 1С в соответствии с требованиями компании и законодательства; Разработка инструкций для пользователей"]];
+
+// Образование //
+$education = ["level" => ["Школа", "СГЭА", "СГАУ", "АНО ДПО 'ИПР'", "GB"], "period" => ["1988-1998","1998-2003","2005-2009","2019","2022"], "specialization" => ["Среднее образование", "Экономист", "Инженер", "ПК по МСФО", "Аналитик"]];
+?>
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Мое резюме</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    html,
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: 'Jost', sans-serif;
+    }
+  </style>
+</head>
+
+<body class="w3-light-grey">
+
+  <!-- Page Container -->
+  <div class="w3-content w3-margin-top" style="max-width:1400px;">
+
+    <!-- The Grid -->
+    <div class="w3-row-padding">
+
+      <!-- Left Column -->
+      <div class="w3-third">
+
+        <div class="w3-white w3-text-grey w3-card-4">
+          <div class="w3-display-container">
+            <img
+              src="https://imgfon.ru/Img/Crop/800x600/Drawn/ulybka-glaza-alisa_v_strane_chudes-svetlyy_fon-zuby.jpg?img.1"
+              style="width:100%" alt="Avatar">
+            <div class="w3-display-bottomleft w3-container w3-text-black">
+              <h2>
+                <?php echo $name?>
+              </h2>
+            </div>
+          </div>
+          <div class="w3-container">
+            <p><i class="fa fa-calendar fa-fw w3-margin-right w3-large w3-text-teal"></i>
+              <?php echo "{$birthdate}, {$age->y} год или " .$age->y*365.?> дней
+            </p>
+            <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal"></i>
+              <?php echo $profession?>
+            </p>
+            <p><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-teal"></i>
+              <?php echo "{$city}, {$country}"?>
+            </p>
+            <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i>
+              <?php echo $mail?>
+            </p>
+            <p><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal"></i>
+              <?php echo $phone?>
+            </p>
+            <hr>
+
+            <p class="w3-large"><b><i class="fa fa-asterisk fa-fw w3-margin-right w3-text-teal"></i>Навыки</b></p>
+            <p>
+              <?php echo $skills[0]?>
+            </p>
+            <div class="w3-light-grey w3-round-xlarge w3-small">
+              <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:<?php echo $percent[2]?>%">
+                <?php echo $percent[2]?>%
+              </div>
+            </div>
+            <p>
+              <?php echo $skills[1]?>
+            </p>
+            <div class="w3-light-grey w3-round-xlarge w3-small">
+              <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:<?php echo $percent[3]?>%">
+                <?php echo $percent[3]?>%
+              </div>
+            </div>
+            <p>
+              <?php echo $skills[2]?>
+            </p>
+            <div class="w3-light-grey w3-round-xlarge w3-small">
+              <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:<?php echo $percent[1]+5?>%">
+                <?php echo $percent[1]+5?>%
+              </div>
+            </div>
+            <p>
+              <?php echo $skills[3]?>
+            </p>
+            <div class="w3-light-grey w3-round-xlarge w3-small">
+              <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:<?php echo $percent[1]?>%">
+                <?php echo $percent[1]?>%
+              </div>
+            </div>
+            <p>
+              <?php echo $skills[4]?>
+            </p>
+            <div class="w3-light-grey w3-round-xlarge w3-small">
+              <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:<?php echo $percent[9]?>%">
+                <?php echo $percent[9]?>%
+              </div>
+            </div>
+            <br>
+
+            <p class="w3-large w3-text-theme"><b><i class="fa fa-globe fa-fw w3-margin-right w3-text-teal"></i>Языки</b>
+            </p>
+            <p>
+              <?php echo $languages[0]?>
+            </p>
+            <div class="w3-light-grey w3-round-xlarge">
+              <div class="w3-round-xlarge w3-teal" style="height:24px;width:<?php echo $percent[0]?>%"></div>
+            </div>
+            <p>
+              <?php echo $languages[1]?>
+            </p>
+            <div class="w3-light-grey w3-round-xlarge">
+              <div class="w3-round-xlarge w3-teal" style="height:24px;width:<?php echo $percent[7]?>%"></div>
+            </div>
+            <p>
+              <?php echo $languages[2]?>
+            </p>
+            <div class="w3-light-grey w3-round-xlarge">
+              <div class="w3-round-xlarge w3-teal" style="height:24px;width:<?php echo $percent[10]?>%"></div>
+            </div>
+            <br>
+          </div>
+        </div><br>
+
+        <!-- End Left Column -->
+      </div>
+
+      <!-- Right Column -->
+      <div class="w3-twothird">
+
+        <div class="w3-container w3-card w3-white w3-margin-bottom">
+          <h2 class="w3-text-grey w3-padding-16"><i
+              class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Опыт работы</h2>
+          <div class="w3-container">
+            <h5 class="w3-opacity"><b>
+                <?php echo $workexperience[work][2]?>
+              </b></h5>
+            <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>
+              <?php echo $workexperience[periodwork][2]?> <span class="w3-tag w3-teal w3-round">Current</span>
+            </h6>
+            <p>
+              <?php echo $workexperience[functions][2]?>
+            </p>
+            <hr>
+          </div>
+          <div class="w3-container">
+            <h5 class="w3-opacity"><b>
+                <?php echo $workexperience[work][1]?>
+              </b></h5>
+            <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>
+              <?php echo $workexperience[periodwork][1]?>
+            </h6>
+            <p>
+              <?php echo $workexperience[functions][1]?>
+            </p>
+            <hr>
+          </div>
+          <div class="w3-container">
+            <h5 class="w3-opacity"><b>
+                <?php echo $workexperience[work][0]?>
+              </b></h5>
+            <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>
+              <?php echo $workexperience[periodwork][0]?>
+            </h6>
+            <p>
+              <?php echo $workexperience[functions][0]?>
+            </p>
+            <hr>
+          </div>
+        </div>
+
+        <div class="w3-container w3-card w3-white">
+          <h2 class="w3-text-grey w3-padding-16"><i
+              class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Образование</h2>
+          <div class="w3-container">
+            <h5 class="w3-opacity"><b>
+                <?php echo $education["level"][4]?>
+              </b></h5>
+            <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>
+              <?php echo $education["period"][4]?>
+            </h6>
+            <p>
+              <?php echo $education["specialization"][4]?>
+            </p><br>
+          </div>
+          <div class="w3-container">
+            <h5 class="w3-opacity"><b>
+                <?php echo $education["level"][3]?>
+              </b></h5>
+            <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>
+              <?php echo $education["period"][3]?>
+            </h6>
+            <p>
+              <?php echo $education["specialization"][3]?>
+            </p><br>
+          </div>
+          <div class="w3-container">
+            <h5 class="w3-opacity"><b>
+                <?php echo $education["level"][2]?>
+              </b></h5>
+            <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>
+              <?php echo $education["period"][2]?>
+            </h6>
+            <p>
+              <?php echo $education["specialization"][2]?>
+            </p><br>
+          </div>
+          <div class="w3-container">
+            <h5 class="w3-opacity"><b>
+                <?php echo $education["level"][1]?>
+              </b></h5>
+            <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>
+              <?php echo $education["period"][1]?>
+            </h6>
+            <p>
+              <?php echo $education["specialization"][1]?>
+            </p><br>
+          </div>
+          <div class="w3-container">
+            <h5 class="w3-opacity"><b>
+                <?php echo $education["level"][0]?>
+              </b></h5>
+            <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>
+              <?php echo $education["period"][0]?>
+            </h6>
+            <p>
+              <?php echo $education["specialization"][0]?>
+            </p><br>
+          </div>
+        </div>
+
+        <!-- End Right Column -->
+      </div>
+
+      <!-- End Grid -->
+    </div>
+
+    <!-- End Page Container -->
+  </div>
+
+  <!-- Footer -->
+  <footer class="w3-container w3-teal w3-center w3-margin-top">
+    <p>Find me on social media.</p>
+    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+    <i class="fa fa-twitter w3-hover-opacity"></i>
+    <i class="fa fa-linkedin w3-hover-opacity"></i>
+    <!-- End footer -->
+  </footer>
+
+</body>
+
+</html>
